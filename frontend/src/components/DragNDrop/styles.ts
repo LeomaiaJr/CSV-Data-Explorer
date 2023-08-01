@@ -9,8 +9,8 @@ interface DropAreaProps {
 
 export const DropArea = muiStyled(Stack)<DropAreaProps>`
   ${({ theme, active }) => `
+    height: 180px;
     align-items: center;
-    flex: 1;
     justify-content: center;
     border-radius: 8px;
     border: 3px dashed ${

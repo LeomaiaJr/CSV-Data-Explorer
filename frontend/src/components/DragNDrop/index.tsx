@@ -23,7 +23,7 @@ const DragNDrop = ({ setFile, file }: DragNDropProps) => {
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
 
-    if (file.name.endsWith('.csv')) setFile(file);
+    if (file && file.name.endsWith('.csv')) setFile(file);
     else
       SnackbarUtils.error(
         'Invalid file extension, only .csv files are accepted'
@@ -31,7 +31,12 @@ const DragNDrop = ({ setFile, file }: DragNDropProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: {
+      'text/csv': ['.csv'],
+    },
+  });
 
   return (
     <>
@@ -40,8 +45,8 @@ const DragNDrop = ({ setFile, file }: DragNDropProps) => {
           <input {...getInputProps()} />
           <UploadFileIcon
             sx={{
-              width: '25%',
-              height: '25%',
+              width: '50px',
+              height: '50px',
             }}
           />
           <Typography mt={1} variant="h6" fontWeight={700} textAlign="center">
