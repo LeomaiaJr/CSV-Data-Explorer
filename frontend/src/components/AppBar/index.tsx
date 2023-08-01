@@ -7,7 +7,7 @@ import { Title, TitleWrapper } from './styles';
 
 const AppBar: FunctionComponent = () => {
   return (
-    <MuiAppBar position="relative">
+    <MuiAppBar position="sticky">
       <Toolbar>
         <TitleWrapper>
           <Title variant="h6">CSV Data Explorer</Title>
