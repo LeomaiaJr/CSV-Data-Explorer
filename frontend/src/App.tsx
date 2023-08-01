@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Stack from '@mui/material/Stack';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import responsiveFontSizes from '@mui/material/styles/responsiveFontSizes';
+import AppBar from './components/AppBar';
+import CustomSnackbarProvider from './components/CustomSnackbarProvider';
+import { UploadPage } from './pages/UploadPage/index.page';
+import { useAppTheme } from './providers/ThemeProvider';
+
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { currentTheme } = useAppTheme();
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Stack height="100%" bgcolor={currentTheme.palette.background.default}>
+      <ThemeProvider theme={responsiveFontSizes(currentTheme)}>
+        <CustomSnackbarProvider>
+          <AppBar />
+          <UploadPage />
+        </CustomSnackbarProvider>
+      </ThemeProvider>
+    </Stack>
+  );
 }
 
-export default App
+export default App;
