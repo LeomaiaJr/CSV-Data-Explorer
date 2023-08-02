@@ -8,7 +8,7 @@ The backend part of the CSV Searcher project is implemented with Node.js and Exp
 
     ```bash
     git clone https://github.com/LeomaiaJr/CSV-Data-Explorer.git
-    cd csv-searcher/backend
+    cd CSV-Data-Explorer/backend
     ```
 
 2.  Create a `.env` file:

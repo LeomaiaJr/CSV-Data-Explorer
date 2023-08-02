@@ -8,7 +8,7 @@ The frontend part of the CSV Searcher project is built with Vite and React. It a
 
     ```bash
     git clone https://github.com/LeomaiaJr/CSV-Data-Explorer.git
-    cd csv-searcher/frontend
+    cd CSV-Data-Explorer/frontend
     ```
 
 2.  Create a `.env` file:
