@@ -1,8 +1,8 @@
 import Stack from '@mui/material/Stack';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import responsiveFontSizes from '@mui/material/styles/responsiveFontSizes';
-import AppBar from './components/AppBar';
-import CustomSnackbarProvider from './components/CustomSnackbarProvider';
+import AppBar from './components/AppBar/AppBar';
+import CustomSnackbarProvider from './components/CustomSnackbarProvider/CustomSnackbarProvider';
 import { HomePage } from './pages/HomePage/index.page';
 import { useAppTheme } from './providers/ThemeProvider';
 

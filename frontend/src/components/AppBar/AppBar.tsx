@@ -2,7 +2,7 @@ import { AppBar as MuiAppBar } from '@mui/material';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { FunctionComponent } from 'react';
-import ThemeSelector from '../ThemeSelector';
+import ThemeSelector from '../ThemeSelector/ThemeSelector';
 import { Title, TitleWrapper } from './styles';
 
 const AppBar: FunctionComponent = () => {

@@ -4,11 +4,11 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
-import DragNDrop from '../../components/DragNDrop';
+import DragNDrop from '../../components/DragNDrop/DragNDrop';
 import { FileWrapper } from './styles';
 import SnackbarUtils from '../../utils/SnackbarUtils';
 import CSVService from '../../api/services/CSVService';
-import { SearchData } from './components/SearchData';
+import { SearchData } from './components/SearchData/SearchData';
 
 export const HomePage = () => {
   const [file, setFile] = useState<File | undefined>(undefined);

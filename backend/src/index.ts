@@ -10,17 +10,14 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 app.use(cors());
 
-// File upload middleware using Multer
 const upload = multer({ dest: 'uploads/' });
 
 interface CSVRow {
   [key: string]: string;
 }
 
-// In-memory data store for CSV data
 let csvData: CSVRow[] = [];
 
-// POST endpoint to upload CSV file
 app.post(
   '/api/files',
   upload.single('csvFile'),
@@ -39,7 +36,7 @@ app.post(
       })
       .on('end', () => {
         csvData = data;
-        fs.unlinkSync(file.path); // Remove the temporary uploaded file
+        fs.unlinkSync(file.path);
         res.json({ message: 'CSV file uploaded successfully' });
       })
       .on('error', (err: any) => {
@@ -49,7 +46,6 @@ app.post(
   }
 );
 
-// GET endpoint to search through the loaded CSV data
 app.get('/api/search', (req: Request, res: Response) => {
   const searchTerm = req.query.q as string;
 
@@ -66,7 +62,6 @@ app.get('/api/search', (req: Request, res: Response) => {
   res.json(results);
 });
 
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server started on http://localhost:${PORT}`);
 });

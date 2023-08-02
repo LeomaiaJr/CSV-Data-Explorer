@@ -6,11 +6,11 @@ import { SearchButtonWrapper, SearchField } from './styles';
 import { useState } from 'react';
 import SnackbarUtils from '../../../../utils/SnackbarUtils';
 import CSVService from '../../../../api/services/CSVService';
-import { DataCard } from '../../../../components/DataCard';
+import { DataCard } from '../../../../components/DataCard/DataCard';
 import Grid from '@mui/material/Grid';
 import FolderOffIcon from '@mui/icons-material/FolderOff';
 import { useAppTheme } from '../../../../providers/ThemeProvider';
-import { LoadingDataCard } from '../../../../components/LoadingDataCard';
+import { LoadingDataCard } from '../../../../components/LoadingDataCard/LoadingDataCard';
 
 export const SearchData = () => {
   const { currentTheme } = useAppTheme();
