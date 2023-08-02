@@ -22,6 +22,8 @@ export const SearchData = () => {
   const [data, setData] = useState<Record<string, string>[]>([]);
 
   const handleSearch = async () => {
+    if (query.trim() === '' || loading) return;
+
     try {
       setLoad(false);
       setLoading(true);
@@ -47,14 +49,21 @@ export const SearchData = () => {
         Search data on file:
       </Typography>
       <Box mt={2} display="flex" alignItems="center" gap={2}>
-        <SearchField
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          id="filled-basic"
-          label="Search"
-          variant="filled"
-          placeholder="Query"
-        />
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSearch();
+          }}
+        >
+          <SearchField
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            id="filled-basic"
+            label="Search"
+            variant="filled"
+            placeholder="Query"
+          />
+        </form>
         <SearchButtonWrapper onClick={handleSearch} disabled={disabledSearch}>
           <SearchIcon />
         </SearchButtonWrapper>
