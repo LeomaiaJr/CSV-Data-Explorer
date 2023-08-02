@@ -26,8 +26,8 @@ export const LoadingDataCard = () => {
     >
       {Array.from(Array(4).keys()).map((_, index) => (
         <Stack key={index}>
-          <Skeleton height="21px" width={getWidth(80, 20)} />
-          <Skeleton height="32px" width={getWidth(160, 80)} />
+          <Skeleton role="status" height="21px" width={getWidth(80, 20)} />
+          <Skeleton role="status" height="32px" width={getWidth(160, 80)} />
         </Stack>
       ))}
     </Stack>

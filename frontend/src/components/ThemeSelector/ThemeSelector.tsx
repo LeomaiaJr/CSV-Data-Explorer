@@ -20,14 +20,14 @@ const ThemeSelector: FunctionComponent = () => {
         height: '40px',
       }}
     >
-      <ToggleButton value="light">
+      <ToggleButton role="light" value="light">
         <BrightnessHighIcon
           style={{
             color: '#fff',
           }}
         />
       </ToggleButton>
-      <ToggleButton value="dark">
+      <ToggleButton role="dark" value="dark">
         <Brightness2Icon
           style={{
             color: '#fff',
