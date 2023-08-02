@@ -42,6 +42,7 @@ export const HomePage = () => {
 
         <Box mt={1} display="flex" justifyContent="end">
           <Button
+            data-testid="upload-button"
             variant="contained"
             disabled={file === undefined}
             onClick={handleUpload}

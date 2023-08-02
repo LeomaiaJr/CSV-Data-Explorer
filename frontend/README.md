@@ -52,15 +52,25 @@ npm run storybook
 
 The Storybook server will start on [http://localhost:6006](http://localhost:6006), where you can view and interact with the components.
 
-## Tests
+## Components Tests
 
-The frontend includes unit tests to ensure the reliability of the application. The tests are implemented using Vitest. To run the tests, use the following command:
+The frontend includes components tests to ensure the reliability of the application. The tests are implemented using Vitest. To run the tests, use the following command:
 
 ```bash
 npm run test
 ```
 
 The test runner will execute the test suites and provide the results in the terminal.
+
+## E2E Tests
+
+The frontend includes E2E tests to ensure the reliability of the application. The tests are implemented using Cypress. To run the tests, use the following command:
+
+```bash
+npm run test:e2e
+```
+
+_The tests require the backend and frontend servers to be running._
 
 ## Features
 

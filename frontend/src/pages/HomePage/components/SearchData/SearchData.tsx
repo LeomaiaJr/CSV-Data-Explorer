@@ -58,20 +58,24 @@ export const SearchData = () => {
           <SearchField
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            id="filled-basic"
+            data-testid="search-field"
             label="Search"
             variant="filled"
             placeholder="Query"
           />
         </form>
-        <SearchButtonWrapper onClick={handleSearch} disabled={disabledSearch}>
+        <SearchButtonWrapper
+          data-testid="search-button"
+          onClick={handleSearch}
+          disabled={disabledSearch}
+        >
           <SearchIcon />
         </SearchButtonWrapper>
       </Box>
 
       {load && data.length > 0 && (
         <Stack mt={4}>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} data-testid="data-grid">
             {data.map((row, index) => (
               <Grid item xs={12} md={6} lg={4} key={index}>
                 <DataCard data={row} />

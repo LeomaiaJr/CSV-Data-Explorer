@@ -41,7 +41,11 @@ const DragNDrop = ({ setFile, file }: DragNDropProps) => {
   return (
     <>
       {file === undefined ? (
-        <DropArea active={isDragActive ? 'true' : 'false'} {...getRootProps()}>
+        <DropArea
+          className="drag-n-drop"
+          active={isDragActive ? 'true' : 'false'}
+          {...getRootProps()}
+        >
           <input {...getInputProps()} />
           <UploadFileIcon
             sx={{
@@ -78,6 +82,7 @@ const DragNDrop = ({ setFile, file }: DragNDropProps) => {
           </Box>
           <div>
             <IconButton
+              data-testid="delete-file"
               onClick={() => {
                 setFile(undefined);
               }}
