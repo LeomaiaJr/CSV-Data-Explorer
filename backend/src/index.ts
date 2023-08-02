@@ -4,7 +4,7 @@ import csvParser from 'csv-parser';
 import fs from 'fs';
 import cors from 'cors';
 
-const app = express();
+export const app = express();
 const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
